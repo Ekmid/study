@@ -1,23 +1,9 @@
-# import math
-
-# def guess(num: int) -> int:
-#     root = math.sqrt(num)
-
-#     if type(root == float):
-#         print('НЕ ЦЕЛЫЙ КОРЕНЬ')
-#     else: print(root)
-
-# guess(5)
-
-root = 0
-
 def guess(root):
-    numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
-    for number in numbers:
+    for number in range(1, root):
         if root / number == number:
-            print(root / number)
+            print(root / number, 'Вот он с*ка!')
             break
         else:
-            print(f'{number} НЕ ПОДОШЛО')
+            print(f'{number} Да где он *ля?')
 
-guess(9)
+guess(9821956)
