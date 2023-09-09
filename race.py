@@ -3,16 +3,16 @@ from import_this import RACE_DATA
 
 def print_race_results(results):
     # Находим победителя (гонщика с минимальным временем)
-    winner = min(results.values(), key=lambda x: x['FinishedTimeSeconds'])
+    winner: dict = min(results.values(), key=lambda x: x['FinishedTimeSeconds'])
 
     # Выводим сообщение о победителе
-    winner_message = f"Выиграл - {winner['RacerName'].upper()}!!! Поздравляем!!"
+    winner_message: str = f"Выиграл - {winner['RacerName'].upper()}!!! Поздравляем!!"
     print(winner_message + '\n')
     print("_" * len(winner_message))
     print("\n")
     
     # Сортируем результаты гонки по времени
-    sorted_results = sorted(results.values(), key=lambda x: x['FinishedTimeSeconds'])
+    sorted_results: list = sorted(results.values(), key=lambda x: x['FinishedTimeSeconds'])
 
     # Выводим первые три места
     print("\nПервые три места:\n\n\n")
@@ -20,10 +20,14 @@ def print_race_results(results):
         print(f"Гонщик на {i} месте:\n")
         print(f"   Имя: {racer['RacerName']}\n")
         print(f"   Команда: {racer['RacerTeam']}\n")
-        time_seconds = racer['FinishedTimeSeconds']
+        time_seconds: int = racer['FinishedTimeSeconds']
+        hours: int
+        remainder: int
+        minutes: int
+        seconds: int
         hours, remainder = divmod(time_seconds, 3600)
         minutes, seconds = divmod(remainder, 60)
-        time_str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+        time_str: str = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
         print(f"   Время: {time_str} (H:M:S)\n")
         print("\n")
 

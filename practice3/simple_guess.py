@@ -17,4 +17,4 @@ def guess(root):
         else:
             print(f'{number} СЛОЖНА СЛОЖНА')
 
-guess(25)
+guess(1)
