@@ -6,4 +6,4 @@ def guess(root):
         else:
             print(f'{number} Да где он ёмае?')
 
-guess(9821956)
+guess(1)
