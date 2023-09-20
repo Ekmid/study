@@ -1,5 +1,5 @@
 # Импортируем данные из файла import_this.py
-from import_this import RACE_DATA
+from started.import_this import RACE_DATA
 
 def print_race_results(results):
     # Находим победителя (гонщика с минимальным временем)
